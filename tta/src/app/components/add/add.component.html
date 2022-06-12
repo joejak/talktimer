@@ -1,0 +1,19 @@
+<mat-card class="standard-card">
+  <mat-card-title style="text-align: center;">New Timer</mat-card-title>
+  <mat-card-content
+    class="add"
+    style="
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      width: 100%;
+    "
+  >
+    <mat-icon class="add" (click)="newCard()" style="transform: scale(8); margin-top: 6vh; margin-bottom: 5vh"
+      >alarm_add</mat-icon
+    >
+  </mat-card-content>
+  <mat-form-field appearance="fill" style="width:100%">
+    <input matInput placeholder="Name" [(ngModel)]="name" />
+  </mat-form-field>
+</mat-card>

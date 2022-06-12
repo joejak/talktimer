@@ -1,0 +1,6 @@
+<app-header></app-header>
+<div style="display: flex; flex-wrap: wrap; padding:1em;">
+  <app-add></app-add>
+  <app-timer *ngFor="let timer of timers"
+  [name]="timer.name"></app-timer>
+</div>

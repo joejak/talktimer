@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>TalkTimer</span>
+    <span class="spacer"></span>
+    <app-menu *ngIf="options$ | async as options$"
+      [options]="options$"
+      (themeChange)="themeChangeHandler($event)">
+    </app-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
