@@ -8,10 +8,11 @@ import { ThemePalette } from '@angular/material/core';
 })
 export class TimerComponent implements OnInit {
   @Input() name!: string;
+  time:string;
   spinnerColor: ThemePalette = 'primary';
 
   constructor() {
-
+    this.time = "00:00";
 
   }
 
