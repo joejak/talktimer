@@ -18,13 +18,32 @@ export class TimersService {
     const t = {
       id: randid.toString(),
       name: somename ? somename : randid.toString(),
-      time: 0
+      time: 0,
+      active: false,
     };
     this.timers.push(t);
     console.log(this.timers);
   }
 
+  getTimer(id:string):Itimer{
+    return this.timers.filter((t)=>{return t.id==id})[0];
+  }
+
   getTimers():Array<Itimer>{
     return this.timers;
+  }
+
+  async startTimer(id:string){
+    this.timers.forEach((t)=>{
+      t.active = false;
+    })
+    this.timers.filter((t)=>{
+      return t.id == id
+    })[0].active=true;
+    return;
+  }
+
+  async stopTimer(id:string){
+    this.getTimer(id).active = false;
   }
 }

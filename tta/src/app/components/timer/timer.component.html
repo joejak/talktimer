@@ -1,25 +1,45 @@
-<mat-card theme="dark" class="standard-card" style="border-radius: 18px;">
-  <textarea matInput rows="2" style="font-size:x-large; resize:none; width: 100%; text-align: center; margin-bottom: 8px; border-width: .1px; border-bottom: solid;">{{
-    name
-  }}</textarea>
+<mat-card theme="dark" class="standard-card" style="border-radius: 18px">
+  <textarea
+    matInput
+    rows="2"
+    style="
+      font-size: x-large;
+      resize: none;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 8px;
+      border-width: 0.1px;
+      border-bottom: solid;
+    "
+    >{{ timer.name }}
+
+  </textarea>
   <mat-card-content
-    style="display: flex; align-items: center; justify-content: center; position: relative;"
+    style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    "
+    (click)="toggleActive()"
   >
-    <div style="height: 240px; width:100%; display: flex; align-items: center; justify-content: center;">
+    <div
+      style="
+        height: 240px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
       <mat-progress-spinner
-        style="position:absolute; left:0; width:100%; margin:0 auto;"
-        [diameter]="240"
-        mode="determinate"
-        value="99"
+        style="position: absolute; left: 0; width: 100%; margin: 0 auto"
+        diameter="240"
+        [mode]="spinnerValue"
+        value="100"
       ></mat-progress-spinner>
-      <p
-        style="
-          position: absolute;
-          width: max-content;
-          font-size: 32pt;
-        "
-      >
-        {{time}}
+      <p style="position: absolute; width: max-content; font-size: 32pt">
+        {{ time }}
       </p>
     </div>
   </mat-card-content>
