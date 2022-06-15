@@ -1,6 +1,7 @@
 <mat-card theme="dark" class="standard-card" style="border-radius: 18px">
   <textarea
     matInput
+    ondblclick="this.select()"
     rows="2"
     style="
       font-size: x-large;
@@ -10,9 +11,9 @@
       margin-bottom: 8px;
       border-width: 0.1px;
       border-bottom: solid;
+      overflow:hidden;
     "
     >{{ timer.name }}
-
   </textarea>
   <mat-card-content
     style="
