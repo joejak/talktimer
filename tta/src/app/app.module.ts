@@ -20,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddComponent } from './components/add/add.component';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { MatInputModule } from '@angular/material/input';
     HttpClientModule,
     FormsModule,
     MatInputModule,
+    MatButtonToggleModule
   ],
   providers: [
     ThemeService, StyleManagerService

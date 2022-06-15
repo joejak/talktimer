@@ -1,9 +1,13 @@
 <mat-icon
   class="icon"
   [matMenuTriggerFor]="menu">
-  palette
+  settings
 </mat-icon>
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" >
+  <div style="width:100%; display:flex; align-content: center; justify-content:center">
+    <span class="mat-optgroup-label">Theme</span>
+  </div>
+  <mat-divider></mat-divider>
   <button
     *ngFor="let option of options"
     mat-menu-item
@@ -39,4 +43,12 @@
     </mat-icon>
     <span>{{ option.label }}</span>
   </button>
+  <mat-divider></mat-divider>
+  <div style="width:100%; display:flex; align-content: center; justify-content:center">
+    <span class="mat-optgroup-label"> Timer Mode</span>
+  </div>
+  <mat-button-toggle-group (valueChange)="changeTimerMode()" [(value)]="timerMode" style="display:flex; align-content: center; justify-content: center;">
+    <mat-button-toggle style="width: 100%" value="single">Single</mat-button-toggle>
+    <mat-button-toggle style="width: 100%" value="multiple">Multiple</mat-button-toggle>
+  </mat-button-toggle-group>
 </mat-menu>

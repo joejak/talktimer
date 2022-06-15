@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ConfigService } from '../config.service';
 import { Itimer } from '../interfaces/itimer';
 
 @Injectable({
@@ -8,7 +9,8 @@ import { Itimer } from '../interfaces/itimer';
 export class TimersService {
   timers: Array<Itimer>;
   observe: Observable<Array<Itimer>>;
-  constructor() {
+
+  constructor(private ConfigServ: ConfigService) {
     this.timers = new Array<Itimer>();
     this.observe = new Observable<Array<Itimer>>();
   }
@@ -34,9 +36,11 @@ export class TimersService {
   }
 
   async startTimer(id:string){
-    this.timers.forEach((t)=>{
-      t.active = false;
-    })
+    if(this.ConfigServ.getTimerMode() == 'single'){
+      this.timers.forEach((t)=>{
+        t.active = false;
+      })
+    }
     this.timers.filter((t)=>{
       return t.id == id
     })[0].active=true;
